@@ -1,0 +1,10 @@
+.btn-space > button{
+  margin: 0px 10px;
+  float: right;
+}
+.login-form{
+    margin-top: 25px;
+}
+Main{
+    padding-top: 50px;
+}
