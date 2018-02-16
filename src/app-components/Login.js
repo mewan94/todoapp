@@ -67,6 +67,16 @@ class Login extends Component{
 
     };
 
+    loginerror(){
+        if(this.props.name.haserror){
+            return(
+                <div className={this.state.hasautherrs}>
+                    <strong>Oh snap!</strong> Change a few things up and try again.
+                </div>
+            );
+        }
+    }
+
     ispassword(e){
         const password = this.refs.password.value;
         if(validator.isByteLength(password,{min:6,max:15})){
@@ -132,9 +142,7 @@ class Login extends Component{
                                             <input type="password" className="form-control" placeholder="password" ref="password" onKeyUp={this.ispassword.bind(this)}/>
                                         </div>
                                     </div>
-                                    <div className={this.state.hasautherrs}>
-                                        <strong>Oh snap!</strong> Change a few things up and try again.
-                                    </div>
+                                    {this.loginerror()}
                                 </fieldset>
                                 <div className="form-group">
                                     <div className="col-lg-10 col-lg-offset-2 btn-space">
